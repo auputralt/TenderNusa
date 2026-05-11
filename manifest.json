@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "TenderNusa - Network & Data Analyzer",
+  "version": "1.0.0",
+  "description": "Captures tRPC, RSC, and network requests on IndoTender. Parses parameters, response bodies, and correlates with user interactions.",
+  "permissions": [
+    "webNavigation",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://indotender.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://indotender.com/*"],
+      "js": ["content/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["lib/*"],
+      "matches": ["https://indotender.com/*"]
+    }
+  ]
+}

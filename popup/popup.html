@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TenderNusa - Network & Data Analyzer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>TenderNusa</h1>
+      <p class="subtitle">Network & Data Analyzer</p>
+    </header>
+
+    <section id="status-bar">
+      <span id="status-indicator" class="status-dot inactive"></span>
+      <span id="status-text">Inactive</span>
+      <button id="btn-reset" title="Reset session">Reset</button>
+    </section>
+
+    <section id="completeness-report">
+      <h2>Data Completeness</h2>
+      <div id="messages"></div>
+    </section>
+
+    <section id="request-log">
+      <h2>Network Requests <span id="request-count" class="badge">0</span></h2>
+      <div id="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="trpc_batch_api">tRPC</button>
+        <button class="filter-btn" data-filter="rsc_navigation_or_payload">RSC</button>
+        <button class="filter-btn" data-filter="auth">Auth</button>
+        <button class="filter-btn" data-filter="other">Other</button>
+      </div>
+      <div id="request-list"></div>
+    </section>
+
+    <section id="user-events">
+      <h2>User Events <span id="event-count" class="badge">0</span></h2>
+      <div id="event-list"></div>
+    </section>
+
+    <section id="dom-mutations">
+      <h2>DOM Changes <span id="mutation-count" class="badge">0</span></h2>
+      <div id="mutation-list"></div>
+    </section>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
